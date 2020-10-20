@@ -13,6 +13,13 @@ import { SpeciesComponent } from '../../pages/species/species.component';
 import { StarshipsComponent } from '../../pages/starships/starships.component';
 import { VehiclesComponent } from '../../pages/vehicles/vehicles.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { BaseService } from 'src/app/services/base.service';
+import { FilmsService } from 'src/app/services/films.service';
+import { PeopleService } from 'src/app/services/people.service';
+import { PlanetsService } from 'src/app/services/planets.service';
+import { SpeciesService } from 'src/app/services/species.service';
+import { StarshipsService } from 'src/app/services/starships.service';
+import { VehiclesService } from 'src/app/services/vehicles.service';
 
 @NgModule({
   imports: [
@@ -30,6 +37,15 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     SpeciesComponent,
     StarshipsComponent,
     VehiclesComponent
+  ],
+  providers: [
+    BaseService,
+    FilmsService,
+    PeopleService,
+    PlanetsService,
+    SpeciesService,
+    StarshipsService,
+    VehiclesService
   ]
 })
 export class AdminLayoutModule { }

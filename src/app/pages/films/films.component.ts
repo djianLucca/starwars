@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmsService } from 'src/app/services/films.service';
 
 @Component({
   selector: 'app-films',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./films.component.scss']
 })
 export class FilmsComponent implements OnInit {
+  films = []
 
-  constructor() { }
+  constructor(private _filmsService: FilmsService) { }
 
   ngOnInit(): void {
+    this._filmsService.getAll()
+      .subscribe((res: any) => {
+        this.films = res.results.map( film => {
+          return {
+            title: film.title,
+            id: film.url.slice(27, 28) //extrating the movie id from the url since it doesn't come as part of the results
+          }
+        });
+        console.log(res)
+      })
   }
 
 }

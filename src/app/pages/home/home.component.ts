@@ -10,33 +10,33 @@ export class HomeComponent implements OnInit {
     {
       path: "/films",
       title: "Films",
-      cover: "https://starwars-visualguide.com/assets/img/categories/films.jpg"
+      cover: "./assets/img/categories/films.jpg"
     },
     {
       path: "/characters",
       title: "Characters",
-      cover: "https://starwars-visualguide.com/assets/img/categories/character.jpg"
+      cover: "./assets/img/categories/character.jpg"
     },
     {
       path: "/planets",
       title: "Planets",
-      cover: "https://starwars-visualguide.com/assets/img/categories/planets.jpg"
+      cover: "./assets/img/categories/planets.jpg"
     },
 
     {
       path: "/species",
       title: "Species",
-      cover: "https://starwars-visualguide.com/assets/img/categories/species.jpg"
+      cover: "./assets/img/categories/species.jpg"
     },
     {
       path: "/starships",
       title: "Starships",
-      cover: "https://starwars-visualguide.com/assets/img/categories/starships.jpg"
+      cover: "./assets/img/categories/starships.jpg"
     },
     {
       path: "/vehicles",
       title: "Vehicles",
-      cover: "https://starwars-visualguide.com/assets/img/categories/vehicles.jpg"
+      cover: "./assets/img/categories/vehicles.jpg"
     }
   ];
 
