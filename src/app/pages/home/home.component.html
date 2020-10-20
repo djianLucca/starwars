@@ -1,0 +1,12 @@
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let menuItem of menuItems">
+      <a class="card bg-dark" [routerLink]="[menuItem.path]">
+        <img class="card-img" [src]="menuItem.cover" alt="Card image" />
+        <div class="card-img-overlay">
+          <h3 class="card-title">{{ menuItem.title }}</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
