@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class BaseService {
@@ -10,15 +10,18 @@ export class BaseService {
     constructor(private httpClient: HttpClient) { }
 
     get<Object>(url: string, id: string): Observable<Object> {
-        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/" + id);
+        let headers = new HttpHeaders();
+        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/" + id, {headers: headers});
     }
 
     search<Object>(url: string, search: string): Observable<Object> {
-        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/?search=" + search);
+        let headers = new HttpHeaders();
+        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/?search=" + search, {headers: headers});
     }
 
     getAll<Object>(url: string): Observable<Object[]> {
-        return this.httpClient.get<Object[]>(this._urlServico + "/" + url);
+        let headers = new HttpHeaders();
+        return this.httpClient.get<Object[]>(this._urlServico + "/" + url, {headers: headers});
     }
 
 }
