@@ -12,7 +12,7 @@ export class BaseService {
     get<Object>(url: string, id: string): Observable<Object> {
         let headers = new HttpHeaders();
         headers.set('Content-Security-Policy', 'upgrade-insecure-requests')
-        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/" + id, {headers: headers});
+        return this.httpClient.get<Object>(this._urlServico + "/" + url + "/" + id + '/?true=true', {headers: headers});
     }
 
     getAll<Object>(url: string): Observable<Object[]> {
