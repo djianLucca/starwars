@@ -20,4 +20,8 @@ export class FilmsService {
   search(terms) {
     return this._baseService.search(this.URL, terms)
   }
+
+  page(pageNumber) {
+    return this._baseService.page(this.URL, pageNumber)
+  }
 }

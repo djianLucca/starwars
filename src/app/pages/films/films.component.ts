@@ -12,7 +12,7 @@ export class FilmsComponent implements OnInit {
   constructor(private _filmsService: FilmsService) { }
 
   ngOnInit(): void {
-    this._filmsService.getAll()
+    this._filmsService.page(1)
       .subscribe((res: any) => {
         this.films = res.results.map( film => {
           return {
