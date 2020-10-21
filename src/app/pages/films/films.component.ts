@@ -17,10 +17,9 @@ export class FilmsComponent implements OnInit {
         this.films = res.results.map( film => {
           return {
             title: film.title,
-            id: film.url.slice(27, 28) //extrating the movie id from the url since it doesn't come as part of the results
+            id: film.url.replace(/[^0-9]/g, '') //extrating the movie id from the url since it doesn't come as part of the results
           }
         });
-        console.log(res)
       })
   }
 
