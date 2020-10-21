@@ -20,6 +20,8 @@ import { PlanetsService } from 'src/app/services/planets.service';
 import { SpeciesService } from 'src/app/services/species.service';
 import { StarshipsService } from 'src/app/services/starships.service';
 import { VehiclesService } from 'src/app/services/vehicles.service';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { ImgFallBackDirective } from 'src/app/directives/img-fall-back.directive';
 
 @NgModule({
   imports: [
@@ -28,6 +30,7 @@ import { VehiclesService } from 'src/app/services/vehicles.service';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    ComponentsModule
   ],
   declarations: [
     HomeComponent,
@@ -36,7 +39,8 @@ import { VehiclesService } from 'src/app/services/vehicles.service';
     PlanetsComponent,
     SpeciesComponent,
     StarshipsComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    ImgFallBackDirective
   ],
   providers: [
     BaseService,

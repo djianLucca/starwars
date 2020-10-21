@@ -1,1 +1,17 @@
-<p>vehicles works!</p>
+<div class="content">
+    <div class="row">
+        <div class="col-6 col-md-4 col-lg-3" *ngFor="let vehicle of vehicles">
+            <a class="card bg-dark" [routerLink]="[vehicle.path]">
+                <img class="card-img" [src]="'./assets/img/vehicles/' + vehicle.id + '.jpg'" alt="Card image" appImgFallBack="./assets/img/big-placeholder.jpg"/>
+                <div class="card-img-overlay">
+                    <h3 class="card-title">{{ vehicle.name }}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row" *ngIf="totalPages && totalPages > 1">
+        <div class="col-12">
+            <app-pagination [totalPages]="totalPages" [actualPage]="actualPage" (moveToPage)="getVehiclesInPage($event)"></app-pagination>
+        </div>
+    </div>
+</div>
