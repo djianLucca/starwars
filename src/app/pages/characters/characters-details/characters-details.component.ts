@@ -46,19 +46,31 @@ export class CharactersDetailsComponent implements OnInit {
 
             res.films.map(filmUrl => {
               let filmId = filmUrl.replace(/[^0-9]/g, '')
-              this._filmsService.getById(filmId).subscribe(film => allFilms.push(film))
+              this._filmsService.getById(filmId).subscribe((film: any) => {
+                film.url = '/films/details/' + film.url.replace(/[^0-9]/g, '')
+                allFilms.push(film)
+              })
             })
             res.species.map(specieUrl => {
               let specieId = specieUrl.replace(/[^0-9]/g, '')
-              return this._speciesService.getById(specieId).subscribe(specie => allSpecies.push(specie))
+              return this._speciesService.getById(specieId).subscribe((specie: any) => {
+                specie.url = '/species/details/' + specie.url.replace(/[^0-9]/g, '')
+                allSpecies.push(specie)
+              })
             })
             res.starships.map(starshipUrl => {
               let starshipId = starshipUrl.replace(/[^0-9]/g, '')
-              return this._starshipsService.getById(starshipId).subscribe(starship => allStarships.push(starship))
+              return this._starshipsService.getById(starshipId).subscribe((starship: any) => {
+                starship.url = '/starships/details/' + starship.url.replace(/[^0-9]/g, '')
+                allStarships.push(starship)
+              })
             })
             res.vehicles.map(vehicleUrl => {
               let vehicleId = vehicleUrl.replace(/[^0-9]/g, '')
-              return this._vehiclesService.getById(vehicleId).subscribe(vehicle => allVehicles.push(vehicle))
+              return this._vehiclesService.getById(vehicleId).subscribe((vehicle: any) => {
+                vehicle.url = '/vehicles/details/' + vehicle.url.replace(/[^0-9]/g, '')
+                allVehicles.push(vehicle)
+              })
             })
 
             res.films = allFilms 
@@ -67,7 +79,10 @@ export class CharactersDetailsComponent implements OnInit {
             res.vehicles = allVehicles 
 
             let homeworldId = res.homeworld.replace(/[^0-9]/g, '')
-            this._planetsService.getById(homeworldId).subscribe(planet => res.homeworld = planet)
+            this._planetsService.getById(homeworldId).subscribe((planet: any) => {
+              res.homeworld = planet
+              res.homeworld.url = '/planets/details/' + planet.url.replace(/[^0-9]/g, '')
+            })
             this.setCharacterPicture(res.url)
 
             this.character = res
