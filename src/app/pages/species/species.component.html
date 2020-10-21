@@ -1,7 +1,7 @@
 <div class="content">
     <div class="row">
         <div class="col-6 col-md-4 col-lg-3" *ngFor="let specie of species">
-            <a class="card bg-dark" [routerLink]="[specie.path]">
+            <a class="card bg-dark" [routerLink]="['details/' + specie.id]">
                 <img class="card-img-top" [src]="'./assets/img/species/' + specie.id + '.jpg'" alt="Card image" appImgFallBack/>
                 <div class="card-body">
                     <h3 class="card-title">{{ specie.name }}</h3>

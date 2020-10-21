@@ -1,7 +1,7 @@
 <div class="content">
     <div class="row">
         <div class="col-6 col-md-4 col-lg-3" *ngFor="let starship of starships">
-            <a class="card bg-dark" [routerLink]="[starship.path]">
+            <a class="card bg-dark" [routerLink]="['details/' + starship.id]">
                 <img class="card-img-top" [src]="'./assets/img/starships/' + starship.id + '.jpg'" alt="Card image" appImgFallBack="./assets/img/big-placeholder.jpg"/>
                 <div class="card-body">
                     <h4 class="card-title">{{ starship.name }}</h4>

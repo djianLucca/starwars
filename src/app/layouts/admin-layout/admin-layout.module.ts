@@ -22,6 +22,12 @@ import { StarshipsService } from 'src/app/services/starships.service';
 import { VehiclesService } from 'src/app/services/vehicles.service';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ImgFallBackDirective } from 'src/app/directives/img-fall-back.directive';
+import { CharactersDetailsComponent } from 'src/app/pages/characters/characters-details/characters-details.component';
+import { FilmsDetailsComponent } from 'src/app/pages/films/films-details/films-details.component';
+import { PlanetsDetailsComponent } from 'src/app/pages/planets/planets-details/planets-details.component';
+import { SpeciesDetailsComponent } from 'src/app/pages/species/species-details/species-details.component';
+import { StarshipsDetailsComponent } from 'src/app/pages/starships/starships-details/starships-details.component';
+import { VehiclesDetailsComponent } from 'src/app/pages/vehicles/vehicles-details/vehicles-details.component';
 
 @NgModule({
   imports: [
@@ -40,7 +46,13 @@ import { ImgFallBackDirective } from 'src/app/directives/img-fall-back.directive
     SpeciesComponent,
     StarshipsComponent,
     VehiclesComponent,
-    ImgFallBackDirective
+    ImgFallBackDirective,
+    CharactersDetailsComponent,
+    FilmsDetailsComponent,
+    PlanetsDetailsComponent,
+    SpeciesDetailsComponent,
+    StarshipsDetailsComponent,
+    VehiclesDetailsComponent
   ],
   providers: [
     BaseService,
