@@ -1,1 +1,43 @@
-<p>species-details works!</p>
+<div class="content">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <img [src]="specieImage" class="img-fluid mb-3" appImgFallBack>
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body" *ngIf="specie">
+                <h3 class="card-title">{{specie.name}}</h3>
+                <h6 class="card-subtitle mb-2 text-muted" *ngIf="specie.homeworld">from <a [routerLink]="[specie.homeworld.url]">{{specie.homeworld.name}}</a></h6>
+                <p><strong>Classification</strong>: {{ specie.classification | titlecase }}</p>
+                <p><strong>Designation</strong>: {{ specie.designation | titlecase }}</p>
+                <p><strong>Average Height</strong>: {{ specie.average_height | titlecase }}</p>
+                <p><strong>Skin Colors</strong>: {{ specie.skin_colors | titlecase }}</p>
+                <p><strong>Hair Colors</strong>: {{ specie.hair_colors | titlecase }}</p>
+                <p><strong>Eye Colors</strong>: {{ specie.eye_colors | uppercase }}</p>
+                <p><strong>Average Lifespan</strong>: {{ specie.average_lifespan | titlecase }}</p>
+                <p><strong>Language</strong>: {{ specie.language | titlecase }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="specie && specie.films[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Related Films</h5>
+                <a class="d-block" *ngFor="let film of specie.films" [routerLink]="[film.url]">{{ film.title }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="specie && specie.characters[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Related Characters</h5>
+                <a class="d-block" *ngFor="let character of specie.characters" [routerLink]="[character.url]">{{ character.name }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
