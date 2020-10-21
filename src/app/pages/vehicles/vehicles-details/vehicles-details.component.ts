@@ -51,7 +51,7 @@ export class VehiclesDetailsComponent implements OnInit {
             })
 
             res.films = allFilms 
-            res.characters = allCharacters 
+            res.pilots = allCharacters 
 
             this.setVehiclePicture(res.url)
 

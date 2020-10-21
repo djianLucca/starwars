@@ -51,7 +51,7 @@ export class PlanetsDetailsComponent implements OnInit {
             })
 
             res.films = allFilms 
-            res.characters = allCharacters 
+            res.residents = allCharacters 
 
             this.setPlanetPicture(res.url)
 

@@ -53,7 +53,7 @@ export class SpeciesDetailsComponent implements OnInit {
             })
 
             res.films = allFilms 
-            res.characters = allCharacters
+            res.people = allCharacters
 
             let homeworldId = res.homeworld.replace(/[^0-9]/g, '')
             this._planetsService.getById(homeworldId).subscribe((planet: any) => {

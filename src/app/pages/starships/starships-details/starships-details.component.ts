@@ -51,7 +51,7 @@ export class StarshipsDetailsComponent implements OnInit {
             })
 
             res.films = allFilms 
-            res.characters = allCharacters 
+            res.pilots = allCharacters 
 
             this.setStarshipPicture(res.url)
 

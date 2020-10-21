@@ -32,11 +32,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4" *ngIf="starship && starship.characters[0]">
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="starship && starship.pilots[0]">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Pilots</h5>
-                <a class="d-block" *ngFor="let character of starship.characters" [routerLink]="[character.url]">{{ character.name }}</a>
+                <a class="d-block" *ngFor="let character of starship.pilots" [routerLink]="[character.url]">{{ character.name }}</a>
               </div>
             </div>
           </div>
