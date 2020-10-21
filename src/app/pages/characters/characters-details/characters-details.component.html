@@ -10,7 +10,7 @@
             <div class="card-body" *ngIf="character">
               <h3 class="card-title">{{character.name}}</h3>
               <h6 class="card-subtitle mb-2 text-muted">from <a [routerLink]="[character.homeworld.url]">{{character.homeworld.name}}</a></h6>
-              <p *ngIf="character.species[0]"><strong>Specie</strong>: {{ character.species[0].name | titlecase }}</p>
+              <p *ngIf="character && character.species[0]"><strong>Specie</strong>: {{ character.species[0].name | titlecase }}</p>
               <p><strong>Height</strong>: {{ character.height | titlecase }}</p>
               <p><strong>Mass</strong>: {{ character.mass | titlecase }}</p>
               <p><strong>Hair Color</strong>: {{ character.hair_color | titlecase }}</p>
@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4" *ngIf="character.films[0]">
+        <div class="col-12 col-md-6 col-lg-4" *ngIf="character && character.films[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Films</h5>
@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4" *ngIf="character.starships[0]">
+        <div class="col-12 col-md-6 col-lg-4" *ngIf="character && character.starships[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Starships</h5>
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4" *ngIf="character.vehicles[0]">
+        <div class="col-12 col-md-6 col-lg-4" *ngIf="character && character.vehicles[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Vehicles</h5>

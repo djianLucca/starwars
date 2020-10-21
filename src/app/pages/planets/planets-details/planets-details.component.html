@@ -20,7 +20,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6" *ngIf="planet.films[0]">
+          <div class="col-12 col-md-6" *ngIf="planet && planet.films[0]">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Related Films</h5>
@@ -28,7 +28,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6" *ngIf="planet.characters[0]">
+          <div class="col-12 col-md-6" *ngIf="planet && planet.characters[0]">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Residents</h5>

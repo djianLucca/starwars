@@ -1,1 +1,46 @@
-<p>starships-details works!</p>
+<div class="content">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <img [src]="starshipImage" class="img-fluid mb-3" appImgFallBack>
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body" *ngIf="starship">
+                <h3 class="card-title">{{starship.name}}</h3>
+                <p><strong>Model</strong>: {{ starship.model | titlecase }}</p>
+                <p><strong>Manufacturer</strong>: {{ starship.manufacturer | titlecase }}</p>
+                <p><strong>Cost in Credits</strong>: {{ starship.cost_in_credits | titlecase }}</p>
+                <p><strong>Length</strong>: {{ starship.length | titlecase }}</p>
+                <p><strong>Max Atmosphering Speed</strong>: {{ starship.max_atmosphering_speed | titlecase }}</p>
+                <p><strong>Crew</strong>: {{ starship.crew | uppercase }}</p>
+                <p><strong>Passengers</strong>: {{ starship.passengers | titlecase }}</p>
+                <p><strong>Cargo Capacity</strong>: {{ starship.cargo_capacity | titlecase }}</p>
+                <p><strong>Consumables</strong>: {{ starship.consumables | titlecase }}</p>
+                <p><strong>Hyperdrive Rating</strong>: {{ starship.hyperdrive_rating | titlecase }}</p>
+                <p><strong>MGLT</strong>: {{ starship.MGLT | titlecase }}</p>
+                <p><strong>Starship Class</strong>: {{ starship.starship_class | titlecase }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="starship && starship.films[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Related Films</h5>
+                <a class="d-block" *ngFor="let film of starship.films" [routerLink]="[film.url]">{{ film.title }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="starship && starship.characters[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Pilots</h5>
+                <a class="d-block" *ngFor="let character of starship.characters" [routerLink]="[character.url]">{{ character.name }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

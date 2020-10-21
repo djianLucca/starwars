@@ -16,7 +16,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4" *ngIf="film.characters[0]">
+        <div class="col-12 col-md-6 col-lg-4" *ngIf="film && film.characters[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Characters</h5>
@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6" *ngIf="film.starships[0]">
+        <div class="col-12 col-md-6" *ngIf="film && film.starships[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Starships</h5>
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6" *ngIf="film.species[0]">
+        <div class="col-12 col-md-6" *ngIf="film && film.species[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Species</h5>
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6" *ngIf="film.planets[0]">
+        <div class="col-12 col-md-6" *ngIf="film && film.planets[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Planets</h5>
@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6" *ngIf="film.vehicles[0]">
+        <div class="col-12 col-md-6" *ngIf="film && film.vehicles[0]">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Related Vehicles</h5>

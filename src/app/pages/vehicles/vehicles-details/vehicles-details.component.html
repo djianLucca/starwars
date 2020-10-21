@@ -1,1 +1,44 @@
-<p>vehicles-details works!</p>
+<div class="content">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <img [src]="vehicleImage" class="img-fluid mb-3" appImgFallBack>
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body" *ngIf="vehicle">
+                <h3 class="card-title">{{vehicle.name}}</h3>
+                <p><strong>Model</strong>: {{ vehicle.model | titlecase }}</p>
+                <p><strong>Manufacturer</strong>: {{ vehicle.manufacturer | titlecase }}</p>
+                <p><strong>Cost in Credits</strong>: {{ vehicle.cost_in_credits | titlecase }}</p>
+                <p><strong>Length</strong>: {{ vehicle.length | titlecase }}</p>
+                <p><strong>Max Atmosphering Speed</strong>: {{ vehicle.max_atmosphering_speed | titlecase }}</p>
+                <p><strong>Crew</strong>: {{ vehicle.crew | uppercase }}</p>
+                <p><strong>Passengers</strong>: {{ vehicle.passengers | titlecase }}</p>
+                <p><strong>Cargo Capacity</strong>: {{ vehicle.cargo_capacity | titlecase }}</p>
+                <p><strong>Consumables</strong>: {{ vehicle.consumables | titlecase }}</p>
+                <p><strong>Vehicle Class</strong>: {{ vehicle.vehicle_class | titlecase }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="vehicle && vehicle.films[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Related Films</h5>
+                <a class="d-block" *ngFor="let film of vehicle.films" [routerLink]="[film.url]">{{ film.title }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" *ngIf="vehicle && vehicle.characters[0]">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Pilots</h5>
+                <a class="d-block" *ngFor="let character of vehicle.characters" [routerLink]="[character.url]">{{ character.name }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
