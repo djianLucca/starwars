@@ -171,7 +171,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         return this.listTitles[item].title;
       }
     }
-    return "Dashboard";
+    return "Home";
   }
 
   open(content) {
@@ -215,5 +215,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     else if(body.classList.contains('white-content')) {
       body.classList.remove('white-content');
     }
+  }
+  changeColors(sidebarColor, dashboardColor) {
+    this.changeSidebarColor(sidebarColor)
+    this.changeDashboardColor(dashboardColor)
   }
 }

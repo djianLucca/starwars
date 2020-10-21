@@ -25,14 +25,14 @@
         </li>
         <li class="nav-item d-flex align-items-center">
           <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-            <label class="m-0 btn btn-sm btn-info btn-simple" (click)="changeSidebarColor('blue');changeDashboardColor('white-content')">
+            <label class="m-0 btn btn-sm btn-info btn-simple" (click)="changeColors('blue','white-content')">
               <input checked="checked" name="options" type="radio" />
 
               <span>
                 LIGHT SIDE
               </span>
             </label>
-            <label class="m-0 btn btn-sm btn-danger btn-simple active" (click)="changeSidebarColor('red');changeDashboardColor('black-content')">
+            <label class="m-0 btn btn-sm btn-danger btn-simple active" (click)="changeColors('red','black-content')">
               <input class="d-none" name="options" type="radio" />
 
               <span>

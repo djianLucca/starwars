@@ -6,7 +6,7 @@
                 <span class="sr-only">Previous</span>
             </a>
         </li>
-        <li class="page-item" [ngClass]="{'bg-danger': i+1 == actualPage}" *ngFor="let item of [].constructor(totalPages); let i = index"><a class="page-link" (click)="moveToPageEmitter(i + 1)">{{i + 1}}</a></li>
+        <li class="page-item" [ngClass]="{'active': i+1 == actualPage}" *ngFor="let item of [].constructor(totalPages); let i = index"><a class="page-link" (click)="moveToPageEmitter(i + 1)">{{i + 1}}</a></li>
         <li class="page-item" [ngClass]="{'disabled': actualPage >= totalPages}">
             <a class="page-link" (click)="moveToPageEmitter(actualPage + 1)" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>

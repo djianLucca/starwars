@@ -161,21 +161,21 @@
   }
 
   .card:not(.card-white){
-    background: $white;
+    background: $white !important;
     box-shadow: 0 1px 15px 0 rgba(123, 123, 123, 0.05);
     .card-header{
-      color: $black;
+      color: $black ;
       a[data-toggle="collapse"]{
-        color: $black;
+        color: $black !important;
       }
     }
     .card-header .card-title, .card-body .card-title{
-      color: $black-states;
+      color: $black-states !important;
     }
 
     .card-body{
       .card-category, .card-description{
-        color: $black-states;
+        color: $black-states !important;
       }
     }
 
