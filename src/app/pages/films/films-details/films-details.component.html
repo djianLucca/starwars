@@ -1,1 +1,62 @@
-<p>films-details works!</p>
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <img [src]="filmImage" class="img-fluid mb-3" appImgFallBack>
+    </div>
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="card">
+            <div class="card-body mh-100" *ngIf="film">
+              <h3 class="card-title">Episode {{film.episode_id}}: {{film.title}}</h3>
+              <p><strong>Opening Crawl</strong>: {{ film.opening_crawl | titlecase }}</p>
+              <p><strong>Director</strong>: {{ film.director | titlecase }}</p>
+              <p><strong>Producer</strong>: {{ film.producer | titlecase }}</p>
+              <p><strong>Release Date</strong>: {{ film.release_date | titlecase }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" *ngIf="film.characters[0]">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Related Characters</h5>
+              <a class="d-block" *ngFor="let character of film.characters" [routerLink]="[character.url]">{{ character.name }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6" *ngIf="film.starships[0]">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Related Starships</h5>
+              <a class="d-block" *ngFor="let starship of film.starships" [routerLink]="[starship.url]">{{ starship.name }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6" *ngIf="film.species[0]">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Related Species</h5>
+              <a class="d-block" *ngFor="let specie of film.species" [routerLink]="[specie.url]">{{ specie.name }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6" *ngIf="film.planets[0]">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Related Planets</h5>
+              <a class="d-block" *ngFor="let planet of film.planets" [routerLink]="[planet.url]">{{ planet.name }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6" *ngIf="film.vehicles[0]">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Related Vehicles</h5>
+              <a class="d-block" *ngFor="let vehicle of film.vehicles" [routerLink]="[vehicle.url]">{{ vehicle.name }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
